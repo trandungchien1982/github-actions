@@ -1,33 +1,3 @@
-# GitHub Actions
-Các ví dụ liên quan đến GitHub Actions từ cơ bản đến nâng cao<br/>
-Mỗi nhánh trong Repo sẽ là 1 ví dụ/ giải pháp/ project mẫu trong GitHub Actions
-
-# Môi trường phát triển
-- Ubuntu 20.04 LTS
-- Docker
-- K8S
-
-# Folder liên quan trên Windows
-```
-D:\Projects\github-actions
-```
-
-==============================================================
-# Ví dụ [02.MultipleStagesDocker]
-==============================================================
-
-**Tham khảo**
-- https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
-- https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
-- https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
-- https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-- https://docs.github.com/en/actions/using-jobs/running-jobs-in-a-container
-
-
-**Nội dung kịch bản GitHub Actions:**<br/>
-- Nằm trong các files YAML thuộc folder `.github/workflows`
-- File YAML mẫu, chẳng hạn như `multi-stages-docker.yaml`
-```shell
 name: GHAs - multiple stages
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
@@ -347,11 +317,3 @@ jobs:
       - name: Show environments
         run: echo $BIEN_MT_01 && echo $BIEN_MT_02
       - run: echo Finish CI inside Docker Container of DockerInDocker
-
-```
-
-**Xem kết quả Pipeline ngay trên UI của GitHub**
-```shell
-https://github.com/trandungchien1982/github-actions/tree/02.MultipleStagesDocker
-( PASSED / PENDING/ FAILED )
-```
