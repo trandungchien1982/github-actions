@@ -1,31 +1,3 @@
-# GitHub Actions
-Các ví dụ liên quan đến GitHub Actions từ cơ bản đến nâng cao<br/>
-Mỗi nhánh trong Repo sẽ là 1 ví dụ/ giải pháp/ project mẫu trong GitHub Actions
-
-# Môi trường phát triển
-- Ubuntu 20.04 LTS
-- Docker
-- K8S
-
-# Folder liên quan trên Windows
-```
-D:\Projects\github-actions
-```
-
-==============================================================
-# Ví dụ [03.Pipeline4Java]
-==============================================================
-
-**Tham khảo**
-- https://stackoverflow.com/questions/63148639/create-dependencies-between-jobs-in-github-actions
-- https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow
-- https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
-
-
-**Nội dung kịch bản GitHub Actions:**<br/>
-- Nằm trong các files YAML thuộc folder `.github/workflows`
-- File YAML mẫu, chẳng hạn như `pipeline-4-java.yaml`
-```shell
 name: GHAs - HelloWorld JavaApps
 run-name: ${{ github.actor }} for HelloWorld JavaApps 🚀
 on: [push]
@@ -132,10 +104,3 @@ jobs:
       - run: ./build-docker.sh
       - run: echo Finish Push package project to Docker Registry in [Docker in Docker] env ...
       - run: echo Build Docker Completed!
-```
-
-**Xem kết quả Pipeline ngay trên UI của GitHub**
-```shell
-https://github.com/trandungchien1982/github-actions/tree/03.Pipeline4Java
-( PASSED / PENDING/ FAILED )
-```
