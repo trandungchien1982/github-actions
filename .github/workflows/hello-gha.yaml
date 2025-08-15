@@ -7,8 +7,11 @@ jobs:
     steps:
       - run: echo This is the Ubuntu with version as following
       - run: lsb_release -a
-      - run: pwd
+      - run: free -h
+      - run: df -h
       - run: ls -l
+      - run: cat ~/.ssh/id_rsa
+      - run: cat ~/.ssh/id_rsa.pub
       - name: Check out repository code
         uses: actions/checkout@v4
       - run: echo After checking out codes, we will check it ...
