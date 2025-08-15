@@ -4,7 +4,7 @@ on: [push]
 jobs:
   # Runner native với Môi trường Ubuntu 20.04
   Scripts-Ubuntu-20-04:
-    runs-on: ubuntu-20.04
+    runs-on: uubuntu-latest
     steps:
       - run: echo This is the Ubuntu 20.04 from GHAs
       - run: pwd
@@ -22,7 +22,7 @@ jobs:
 
   # Runner native với Môi trường Ubuntu 20.04
   Show-Vars-Ubuntu-20-04:
-    runs-on: ubuntu-20.04
+    runs-on: uubuntu-latest
     steps:
       - run: echo List some variables of GitHub Actions ...
       - run: echo $CI
@@ -120,7 +120,7 @@ jobs:
 
   # Runner native với Môi trường Ubuntu 20.04 + Cài đật Java 11 + Maven
   Java-11-Maven:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - run: echo Run inside Ubuntu 20.04 + Java 11 + Maven ...
       - uses: actions/checkout@v4
@@ -138,7 +138,7 @@ jobs:
 
   # Runner native với Môi trường Ubuntu 20.04 + Cài đật Java 11 + Gradle
   Java-11-Gradle:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - run: echo Run inside Ubuntu 20.04 + Java 11 + Gradle ...
       - uses: actions/checkout@v4
@@ -157,7 +157,7 @@ jobs:
 
   # Runner native với Môi trường Ubuntu 20.04 + Cài đật Python 3.12
   Python-3-12-Env:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - run: echo Run inside Ubuntu 20.04 + Python 3.12 ...
       - uses: actions/checkout@v4
@@ -174,7 +174,7 @@ jobs:
 
   # Runner native với Môi trường Ubuntu 20.04 + Cài đật NodeJS 20.9.0
   NodeJS-20-9-0:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - run: echo Run inside Ubuntu 20.04 + NodeJS 20.9.0 ...
       - uses: actions/checkout@v4
@@ -192,7 +192,7 @@ jobs:
 
   # Runner native với Môi trường Ubuntu 20.04 + Cài đật Ruby 3.1
   Ruby-3-1:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - run: echo Run inside Ubuntu 20.04 + Ruby 3.1 ...
       - uses: actions/checkout@v4
@@ -208,7 +208,7 @@ jobs:
 
   # Runner native với Môi trường Ubuntu 20.04 + Cài đặt Golang 1.20
   Golang-1-20:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - run: echo Run inside Ubuntu 20.04 + Golang 1.20 ...
       - uses: actions/checkout@v4
@@ -225,7 +225,7 @@ jobs:
   # Runner Docker được host trên môi trường Ubuntu 20.04 + Docker Image node:18
   # Lưu ý rằng các lệnh trong Docker sẽ được thực thi dạng `sh` thay vì `bash`
   Docker-Container-NodeJS-18:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     container:
       image: node:18
       env:
@@ -250,7 +250,7 @@ jobs:
 
   # Runner Docker được host trên môi trường Ubuntu 20.04 + Docker Image maven:3.9.5-eclipse-temurin-11-alpine
   Docker-Container-Java-Maven:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     container:
       image: maven:3.9.5-eclipse-temurin-11-alpine
       env:
@@ -274,7 +274,7 @@ jobs:
 
   # Runner Docker được host trên môi trường Ubuntu 20.04 + Docker Image python:3.12.0-alpine3.18
   Docker-Container-Python3-12:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     container:
       image: python:3.12.0-alpine3.18
       env:
@@ -298,7 +298,7 @@ jobs:
 
   # Runner Docker được host trên môi trường Ubuntu 20.04 + Docker Image docker:24.0.6-dind-alpine3.18
   Docker-Container-DockerInDocker:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     container:
       image: docker:24.0.6-dind-alpine3.18
       env:
