@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
   Hello-GitHub-Actions:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - run: echo This is the Ubuntu 20.04
       - run: pwd
@@ -22,7 +22,7 @@ jobs:
       - run: echo "Finish the first job :) ... "
 
   Explore-Some-Features-GHAs:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
