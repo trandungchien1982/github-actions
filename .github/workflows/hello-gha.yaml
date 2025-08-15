@@ -5,7 +5,8 @@ jobs:
   Hello-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo This is the Ubuntu 20.04
+      - run: echo This is the Ubuntu with version as following
+      - run: lsb_release -a
       - run: pwd
       - run: ls -l
       - name: Check out repository code
