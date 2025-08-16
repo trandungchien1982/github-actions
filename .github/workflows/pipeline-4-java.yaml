@@ -86,7 +86,7 @@ jobs:
   # Build Docker Image
   Build-Docker-Image:
     runs-on: ubuntu-latest
-    needs: [Check-Lint-Java, Build-Java-11-Gradle]
+    needs: [Check-Lint-Java, Build-Java-21-Gradle]
     steps:
       - run: echo Build Docker Image [TODO ...]
       - uses: actions/checkout@v4
