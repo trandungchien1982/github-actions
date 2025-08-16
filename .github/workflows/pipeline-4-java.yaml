@@ -68,18 +68,18 @@ jobs:
       - name: Build Java Apps using Gradle ...
         run: cd ./hello-world-app
       - run: ls -l
-      - run: chmod +x gradlew
+      - run: chmod +x ./hello-world-app/gradlew
       - name: Check Gradle Version
-        run: ./gradlew --version
-      - run: ./gradlew clean build
-      - run: echo Finish build Java project using Gradle, we will have the ./build/libs/hello-world-0.0.1-SNAPSHOT.jar
-      - run: ls -l ./build/libs
+        run: ./hello-world-app/gradlew --version
+      - run: ./hello-world-app/gradlew clean build
+      - run: echo Finish build Java project using Gradle, we will have the .hello-world-app/build/libs/hello-world-0.0.1-SNAPSHOT.jar
+      - run: ls -l ./hello-world-app/build/libs
       - name: Save artifacts for next steps
         uses: actions/upload-artifact@v4
         with:
           name: the-build-output-hello-world
           path: |
-            ./build/libs/*.jar
+            ./hello-world-app/build/libs/*.jar
           retention-days: 30
       - run: echo Build Completed!
 
