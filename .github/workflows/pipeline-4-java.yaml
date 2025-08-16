@@ -65,18 +65,19 @@ jobs:
           architecture: x64
       - name: Check Java Version
         run: java --version
-      - name: Check Gradle Version
-        run: gradle --version
       - name: Build Java Apps using Gradle ...
-        run: gradle clean build --build-file ./hello-world-app/build.gradle
+        run: cd ./hello-world-app
+      - name: Check Gradle Version
+        run: ./gradlew --version
+      - run: ./gradle clean build --build-file ./hello-world-app/build.gradle
       - run: echo Finish build Java project using Gradle, we will have the ./hello-world-app/build/libs/hello-world-0.0.1-SNAPSHOT.jar
-      - run: ls -l ./hello-world-app/build/libs
+      - run: ls -l ./build/libs
       - name: Save artifacts for next steps
         uses: actions/upload-artifact@v4
         with:
           name: the-build-output-hello-world
           path: |
-            hello-world-app/build/libs/*.jar
+            ./build/libs/*.jar
           retention-days: 30
       - run: echo Build Completed!
 
