@@ -51,7 +51,7 @@ jobs:
       - run: echo "Finish the first job :) ... "
 
   # Build Java with JDK 21 + Gradle
-  Build-Java-11-Gradle:
+  Build-Java-21-Gradle:
     runs-on: ubuntu-latest
     needs: Check-Lint-Java
     steps:
@@ -67,10 +67,12 @@ jobs:
         run: java --version
       - name: Build Java Apps using Gradle ...
         run: cd ./hello-world-app
+      - run: ls -l
+      - run: chmod +x gradlew
       - name: Check Gradle Version
         run: ./gradlew --version
-      - run: ./gradle clean build --build-file ./hello-world-app/build.gradle
-      - run: echo Finish build Java project using Gradle, we will have the ./hello-world-app/build/libs/hello-world-0.0.1-SNAPSHOT.jar
+      - run: ./gradlew clean build
+      - run: echo Finish build Java project using Gradle, we will have the ./build/libs/hello-world-0.0.1-SNAPSHOT.jar
       - run: ls -l ./build/libs
       - name: Save artifacts for next steps
         uses: actions/upload-artifact@v4
