@@ -15,7 +15,7 @@ docker build ./hello-world-app -t "$IMAGE_NAME_GLOBAL"
 
 echo Push new image to Docker Registry
 docker images
-docker login
+docker login -u $LOGIN_DOCKER_USR -p $LOGIN_DOCKER_PWD
 docker push "$IMAGE_NAME_GLOBAL"
 
 echo "Run App using Docker on localhost"
