@@ -1,5 +1,7 @@
 # You need to login into the Docker Registry first by using `docker login`
 export IMAGE_NAME_GLOBAL=tdchien1982/github-actions:03.ci-java-hello-world-2.0
+
+echo "Update information of Build Docker Image"
 echo "Build Docker Image for Java HelloWorld: $IMAGE_NAME_GLOBAL"
 uname -a
 echo Check Docker Version
