@@ -19,4 +19,6 @@ docker login
 docker push "$IMAGE_NAME_GLOBAL"
 
 echo "Run App using Docker on localhost"
+echo "Show Docker Information now ..."
+docker info
 #docker run -p 9300:8100 --name java-hello-world-gha-demo -d --env PORT=8100 "$IMAGE_NAME_GLOBAL"
