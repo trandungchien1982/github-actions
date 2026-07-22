@@ -76,5 +76,5 @@ jobs:
 
       - name: Call services using domain
         run: |
-          curl --fail --verbose https://relax.tdc.vv/
-          curl --fail --verbose https://lsa.tdc.vv/
+          curl --fail --insecure --verbose https://relax.tdc.vv/
+          curl --fail --insecure --verbose https://lsa.tdc.vv/
