@@ -41,3 +41,40 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+
+  Test-CustomDNS:
+    runs-on: ubuntu-latest
+
+    env:
+      CUSTOM_DNS: 192.46.228.6
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Configure custom DNS for tdc.vv
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          INTERFACE=$(ip route | awk '/default/ {print $5; exit}')
+
+          echo "Default interface: ${INTERFACE}"
+          echo "Custom DNS: ${CUSTOM_DNS}"
+
+          sudo resolvectl dns "${INTERFACE}" "${CUSTOM_DNS}"
+
+          # Chỉ domain *.tdc.vv được gửi tới custom DNS
+          sudo resolvectl domain "${INTERFACE}" "~tdc.vv"
+
+          resolvectl status "${INTERFACE}"
+
+      - name: Verify DNS resolution
+        run: |
+          getent hosts test1.tdc.vv
+          getent hosts test2.tdc.vv
+
+      - name: Call services using domain
+        run: |
+          curl --fail --verbose https://relax.tdc.vv/
+          curl --fail --verbose https://lsa.tdc.vv/
